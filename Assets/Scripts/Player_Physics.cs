@@ -96,9 +96,9 @@ public class Player_Physics : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
         //下から貫通する床のため。何かしらのギミックと噛み合わない状況が起こったら変えなくはいけない
-        var diff = transform.position.y - coll.gameObject.transform.position.y;
-        if (diff > 0)
-        {
+        //var diff = transform.position.y - coll.gameObject.transform.position.y;
+        //if (diff > 0)
+        //{
             if (isShot)
             {
                 Debug.Log(coll.gameObject);
@@ -119,6 +119,6 @@ public class Player_Physics : MonoBehaviour
                     rb.sharedMaterial = physicsMaterial2D2;
                 }
             }
-        }
+        //}
     }
 }
