@@ -700,6 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be75d08c0c4d0e4980f8ce6e82ceb1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbodySimulate: {fileID: 0}
   stage: Game_Physics
   angle: 0
   power: 0
@@ -831,7 +832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1375270022
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player_Physics : MonoBehaviour
 {
+
     public string stage;
 
     public float angle;
@@ -49,12 +50,10 @@ public class Player_Physics : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                //Debug.Log("�����ꂽ");
                 startPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             }
             else if (Input.GetMouseButton(0))
             {
-                //Debug.Log("������Ă���");
 
                 Vector2 tempVec = new Vector2(startPos.x - Input.mousePosition.x, startPos.y - Input.mousePosition.y);
 
@@ -68,14 +67,22 @@ public class Player_Physics : MonoBehaviour
 
                 isShot = true;
 
-                //Debug.Log("�����[�X");
                 endPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 
+                //vec = new Vector2(startPos.x - endPos.x, startPos.y - endPos.y);
 
-                vec = new Vector2(startPos.x - endPos.x, startPos.y - endPos.y);
-                //vec = vec / vec.magnitude;
+                if (power > 300)
+                {
+                    power = 300;
+                }
+                else if (power < 10)
+                {
+                    power = 10;
+                }
 
-                rb.AddForce(vec);
+                Vector2 nextVector = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * power;
+
+                rb.AddForce(nextVector);
 
             }
 
