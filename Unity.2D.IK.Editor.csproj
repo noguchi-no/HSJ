@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7067b68b-8446-5ca5-8ea4-f583614670c4}</ProjectGuid>
+    <ProjectGuid>{17fd5538-06f8-26f8-3058-5a7f0d6138a7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.2D.IK.Editor</AssemblyName>
@@ -277,22 +277,22 @@
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.19f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-main 2/Library/PackageCache/com.unity.collab-proxy@1.15.7/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-master/Library/PackageCache/com.unity.collab-proxy@1.15.7/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-main 2/Library/PackageCache/com.unity.collab-proxy@1.15.7/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-master/Library/PackageCache/com.unity.collab-proxy@1.15.7/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
-        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-main 2/Library/PackageCache/com.unity.collab-proxy@1.15.7/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-master/Library/PackageCache/com.unity.collab-proxy@1.15.7/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
-        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-main 2/Library/PackageCache/com.unity.collab-proxy@1.15.7/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-master/Library/PackageCache/com.unity.collab-proxy@1.15.7/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-main 2/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-master/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-main 2/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-master/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.19f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -651,43 +651,43 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
-      <Project>{0e4c9f43-0f05-40c3-b010-0473a9b72b46}</Project>
+      <Project>{a710c444-e463-5bc5-2bfa-33dc5001f2cb}</Project>
       <Name>Unity.InternalAPIEditorBridge.001</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
-      <Project>{819a6249-77dd-655f-1be2-52bc76ec030f}</Project>
+      <Project>{4b06a373-98cb-437e-5b37-98957d1970a3}</Project>
       <Name>Unity.InternalAPIEngineBridge.001</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Editor.csproj">
-      <Project>{50228521-30a0-6923-7ac7-490250138ca9}</Project>
+      <Project>{7d6336e8-bbcf-18ae-d93e-ae8411815521}</Project>
       <Name>Unity.2D.Common.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
-      <Project>{f6b89418-f51c-d447-1ede-1877df2fe452}</Project>
+      <Project>{f2e7ddd4-686b-99f5-1be6-808ee22aaaba}</Project>
       <Name>Unity.2D.Common.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
-      <Project>{daf66e8b-e414-01e6-2149-8e9cc651b622}</Project>
+      <Project>{eb81451a-49d2-85a3-8a31-399bbd52ec55}</Project>
       <Name>Unity.2D.IK.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
-      <Project>{7ae52110-ec31-a89a-305e-85508d3f1707}</Project>
+      <Project>{d7b1f5a0-b085-fe36-a662-decf9520009c}</Project>
       <Name>Unity.2D.Animation.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{af3c8b51-c875-91ef-7d73-356bae2df09c}</Project>
+      <Project>{09343f9e-881d-726f-92f7-19b608a60891}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{fd8942cb-59d4-f3ed-e341-8f51a0b84378}</Project>
+      <Project>{5c1039dd-4b1b-9da4-a45f-87394cfb1a12}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{c580afbf-4e7e-fb7d-3c64-086111cb044f}</Project>
+      <Project>{9480c75e-25e8-8a43-feba-758432b0b224}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{5eab2697-20a7-bf8d-92fd-ab551dd6b5d4}</Project>
+      <Project>{691a9e12-87af-a2bc-9e50-50a7ab39028c}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

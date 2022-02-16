@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{c580afbf-4e7e-fb7d-3c64-086111cb044f}</ProjectGuid>
+    <ProjectGuid>{9480c75e-25e8-8a43-feba-758432b0b224}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>UnityEngine.TestRunner</AssemblyName>
@@ -132,8 +132,8 @@
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/Assertions/AllocatingGCMemoryConstraint.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTearDownAttribute.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/NUnitExtensions/IAsyncTestAssemblyBuilder.cs" />
-     <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/Assertions/UnhandledLogMessageException.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/TestRunner/RemoteHelpers/IRemoteTestResultDataFactory.cs" />
+     <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/Assertions/UnhandledLogMessageException.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/TestRunner/RemoteHelpers/RemoteTestResultDataFactory.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/TestRunner/TestEnumeratorWrapper.cs" />
@@ -380,7 +380,7 @@
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.19f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-main 2/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+        <HintPath>/Users/noguchiatsushi/Downloads/HSJ-master/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.19f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

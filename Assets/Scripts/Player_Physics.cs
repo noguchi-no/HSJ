@@ -38,7 +38,7 @@ public class Player_Physics : MonoBehaviour
     {
         Shot();
 
-        if (Input.GetKeyDown("r")) SceneManager.LoadScene(stage);
+        if (Input.GetKeyDown("r")) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
@@ -71,9 +71,9 @@ public class Player_Physics : MonoBehaviour
 
                 //vec = new Vector2(startPos.x - endPos.x, startPos.y - endPos.y);
 
-                if (power > 300)
+                if (power > 400)
                 {
-                    power = 300;
+                    power = 400;
                 }
                 else if (power < 10)
                 {
