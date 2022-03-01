@@ -8,8 +8,8 @@ public class Player_Physics : MonoBehaviour
 
     public string stage;
 
-    public float angle;
-    public float power;
+    public float angle = 0;
+    public float power = 0;
 
     bool isShot = false;
     bool end1st = false;
@@ -24,6 +24,8 @@ public class Player_Physics : MonoBehaviour
     Rigidbody2D rb;
     public PhysicsMaterial2D physicsMaterial2D;
     public PhysicsMaterial2D physicsMaterial2D2;
+
+    public bool isHold = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,11 +52,12 @@ public class Player_Physics : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                isHold = false;
                 startPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             }
             else if (Input.GetMouseButton(0))
             {
-
+                isHold = true;
                 Vector2 tempVec = new Vector2(startPos.x - Input.mousePosition.x, startPos.y - Input.mousePosition.y);
 
                 power = tempVec.magnitude;
@@ -64,7 +67,7 @@ public class Player_Physics : MonoBehaviour
             }
             else if (Input.GetMouseButtonUp(0))
             {
-
+                isHold = false;
                 isShot = true;
 
                 endPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
