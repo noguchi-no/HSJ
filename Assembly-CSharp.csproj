@@ -53,14 +53,19 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\WindField.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerFriction.cs" />
     <Compile Include="Assets\Scripts\RotateWall.cs" />
     <Compile Include="Assets\Scripts\Game8Manager.cs" />
+    <Compile Include="Assets\Scripts\OnceThroughCircle.cs" />
     <Compile Include="Assets\Scripts\BreakPlatform.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\SwitchWall.cs" />
+    <Compile Include="Assets\Scripts\warpGate.cs" />
     <Compile Include="Assets\Scripts\DeathObstacle.cs" />
     <Compile Include="Assets\Scripts\RigidbodySimulate.cs" />
     <Compile Include="Assets\Scripts\Player_Physics.cs" />
+    <Compile Include="Assets\Scripts\PenetratingFloor.cs" />
     <Compile Include="Assets\Scripts\Arrow.cs" />
     <Compile Include="Assets\Scripts\MoveFloor.cs" />
     <Compile Include="Assets\Scripts\SinFloor.cs" />
@@ -74,11 +79,6 @@
     <Compile Include="Assets\Scripts\FrictionIncrease.cs" />
     <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\SecondPlayer.cs" />
-    <Compile Include="Assets\Scripts\PenetratingFloor.cs" />
-    <Compile Include="Assets\Scripts\WindField.cs" />
-    <Compile Include="Assets\Scripts\warpGate.cs" />
-    <Compile Include="Assets\Scripts\OnceThroughCircle.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerFriction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

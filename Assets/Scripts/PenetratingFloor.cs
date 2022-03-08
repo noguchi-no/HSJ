@@ -18,6 +18,10 @@ public class PenetratingFloor : MonoBehaviour
         {
             CheckPos.isTrigger = true;
         }
+        else
+        {
+            CheckPos.isTrigger = false;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
