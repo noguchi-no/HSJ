@@ -19,7 +19,5 @@ public class RotateWall : MonoBehaviour
         float moveAccount = speed * Time.deltaTime;
 
         transform.eulerAngles += new Vector3(0, 0, moveAccount);
-
-
     }
 }
