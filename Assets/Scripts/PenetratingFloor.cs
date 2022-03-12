@@ -14,9 +14,13 @@ public class PenetratingFloor : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("コライダーに入った");
-        if(col.tag == "Player" && checkDistance(col.gameObject))
+        if (col.tag == "Player" && checkDistance(col.gameObject))
         {
             CheckPos.isTrigger = true;
+        }
+        else
+        {
+            CheckPos.isTrigger = false;
         }
     }
 

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Systems.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using AudioType = Systems.Audio.AudioType;
 
 public class Player_Physics : MonoBehaviour
 {
@@ -109,26 +111,56 @@ public class Player_Physics : MonoBehaviour
         //var diff = transform.position.y - coll.gameObject.transform.position.y;
         //if (diff > 0)
         //{
-            if (isShot)
+        if (isShot)
+        {
+            Debug.Log(coll.gameObject);
+
+            if (!end1st)
             {
-                Debug.Log(coll.gameObject);
+                end1st = true;
+                Debug.Log("1回目のジャンプ");
 
-                if (!end1st)
-                {
-                    end1st = true;
-                    Debug.Log("1回目のジャンプ");
+                rb.sharedMaterial = physicsMaterial2D;
+                PlayBoundSe(AudioType.Bound);
 
-                    rb.sharedMaterial = physicsMaterial2D;
-
-                }
-                else if (!end2nd)
-                {
-                    end2nd = true;
-                    Debug.Log("2回目のジャンプ");
-
-                    rb.sharedMaterial = physicsMaterial2D2;
-                }
             }
-        //}
+            else if (!end2nd)
+            {
+                end2nd = true;
+                Debug.Log("2回目のジャンプ");
+
+                rb.sharedMaterial = physicsMaterial2D2;
+                PlayBoundSe(AudioType.Bound);
+                StartCoroutine("checkPos");
+            }
+
+            
+            //}
+        }
+    }
+
+    private void PlayBoundSe(AudioType type)
+    {
+        var Se = FindObjectOfType<SystemAudioManager>();
+        if (Se != null) Se.ShotSe(type);
+        else Debug.LogError("Sesystemが実装されていません");
+    }
+
+    IEnumerator checkPos()
+    {
+        while(true)
+        {
+            var tempPos = transform.position;
+            yield return new WaitForSeconds(1f);
+            var dis = Vector3.Distance(transform.position, tempPos);
+            Debug.Log(dis);
+            if (dis <= 0.1f)
+            {
+                yield return new WaitForSeconds(1f);
+                PlayBoundSe(AudioType.Dead);
+                yield return new WaitForSeconds(0.5f);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
     }
 }

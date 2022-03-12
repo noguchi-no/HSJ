@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Systems.Audio;
 using UnityEngine;
+using AudioType = Systems.Audio.AudioType;
 
 public class Goal : MonoBehaviour
 {
@@ -24,6 +26,14 @@ public class Goal : MonoBehaviour
         {
             Debug.Log("GOAL!!!");
             Destroy(this.gameObject);
+            PlayBoundSe();
         }
+    }
+
+    private void PlayBoundSe()
+    {
+        var Se = FindObjectOfType<SystemAudioManager>();
+        if (Se != null) Se.ShotSe(AudioType.Goal);
+        else Debug.LogError("Sesystem‚ªŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
     }
 }

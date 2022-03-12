@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Systems.Audio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using AudioType = Systems.Audio.AudioType;
 
 public class DeathObstacle : MonoBehaviour
 {
@@ -13,13 +16,20 @@ public class DeathObstacle : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            Destroy(other.gameObject);
+            PlayBoundSe(AudioType.Bound);
+            StartCoroutine("restart", other.gameObject);
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void PlayBoundSe(AudioType type)
     {
-        
+        var Se = FindObjectOfType<SystemAudioManager>();
+        if (Se != null) Se.ShotSe(type);
+        else Debug.LogError("Sesystem‚ªŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+    }
+    IEnumerator restart(GameObject obj)
+    {
+        Destroy(obj);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
