@@ -5,15 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Player_Physics : MonoBehaviour
 {
-
-    public string stage;
-
     public float angle = 0;
     public float power = 0;
 
     bool isShot = false;
-    bool end1st = false;
-    bool end2nd = false;
+    public bool end1st = false;
+    public bool end2nd = false;
 
     bool isEnd = false;
 
@@ -24,6 +21,7 @@ public class Player_Physics : MonoBehaviour
     Rigidbody2D rb;
     public PhysicsMaterial2D physicsMaterial2D;
     public PhysicsMaterial2D physicsMaterial2D2;
+    public PhysicsMaterial2D physicsMaterial2D3;
 
     public bool isHold = false;
 
@@ -125,10 +123,22 @@ public class Player_Physics : MonoBehaviour
                 {
                     end2nd = true;
                     Debug.Log("2回目のジャンプ");
+                    
+                    if(coll.gameObject.tag == "Ice")
+                    {
+                        Debug.Log("Ice!!!");
+                        rb.sharedMaterial = physicsMaterial2D3;
+                    }
+                    else
+                    {
+                        rb.sharedMaterial = physicsMaterial2D2;
+                    }
 
-                    rb.sharedMaterial = physicsMaterial2D2;
+                    
                 }
             }
+
+
         //}
     }
 }

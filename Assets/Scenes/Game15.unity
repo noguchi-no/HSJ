@@ -310,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176530562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.37, y: -0.82, z: 0.13}
+  m_LocalPosition: {x: 8.35, y: -0.19, z: 0.13}
   m_LocalScale: {x: 0.6, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -567,7 +567,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &662755314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1063,7 +1063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1109712404012948329, guid: 367640c3b55426c48ac7a29d008ecec0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8433915
+      value: 0.8660254
       objectReference: {fileID: 0}
     - target: {fileID: 1109712404012948329, guid: 367640c3b55426c48ac7a29d008ecec0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1075,7 +1075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1109712404012948329, guid: 367640c3b55426c48ac7a29d008ecec0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.53729963
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1109712404012948329, guid: 367640c3b55426c48ac7a29d008ecec0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1087,7 +1087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1109712404012948329, guid: 367640c3b55426c48ac7a29d008ecec0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 65
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1109712404012948332, guid: 367640c3b55426c48ac7a29d008ecec0, type: 3}
       propertyPath: m_Name
