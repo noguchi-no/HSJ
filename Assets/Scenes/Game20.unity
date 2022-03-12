@@ -489,11 +489,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be75d08c0c4d0e4980f8ce6e82ceb1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage: Game7
   angle: 0
   power: 0
+  end1st: 0
+  end2nd: 0
   physicsMaterial2D: {fileID: 6200000, guid: 537d2fc48707b3a46b59d4262a753599, type: 2}
   physicsMaterial2D2: {fileID: 6200000, guid: 4ce73c0b54944fb4f96f2084314683bf, type: 2}
+  physicsMaterial2D3: {fileID: 6200000, guid: 9c2fdbef2f55f415b9abbd76db3d6fca, type: 2}
   isHold: 0
 --- !u!58 &662755312
 CircleCollider2D:
@@ -1116,12 +1118,12 @@ GameObject:
   - component: {fileID: 1677429245}
   - component: {fileID: 1677429244}
   m_Layer: 0
-  m_Name: GoalFloor  (1)
-  m_TagString: Wall
+  m_Name: 'IceFloor  '
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1677429244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,13 +1131,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677429243}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56c9fcc6fb3a3437a8c69a57dcfacf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 662755313}
-  physicsMaterial2D3: {fileID: 6200000, guid: 9c2fdbef2f55f415b9abbd76db3d6fca, type: 2}
+  Player: {fileID: 0}
 --- !u!61 &1677429245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1203,7 +1205,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.87835574, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1221,8 +1223,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677429243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8927, y: -3.63, z: 0}
-  m_LocalScale: {x: 12.968306, y: 0.931493, z: 1}
+  m_LocalPosition: {x: 2.29, y: -3.99, z: 0}
+  m_LocalScale: {x: 6.318158, y: 0.931493, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
