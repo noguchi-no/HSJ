@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Systems.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using AudioType = Systems.Audio.AudioType;
 
 public class Player_Physics : MonoBehaviour
 {
+
+    public string stage;
+
     public float angle = 0;
     public float power = 0;
 
     bool isShot = false;
-    public bool end1st = false;
-    public bool end2nd = false;
+    bool end1st = false;
+    bool end2nd = false;
 
     bool isEnd = false;
 
@@ -21,7 +26,6 @@ public class Player_Physics : MonoBehaviour
     Rigidbody2D rb;
     public PhysicsMaterial2D physicsMaterial2D;
     public PhysicsMaterial2D physicsMaterial2D2;
-    public PhysicsMaterial2D physicsMaterial2D3;
 
     public bool isHold = false;
 
@@ -107,38 +111,56 @@ public class Player_Physics : MonoBehaviour
         //var diff = transform.position.y - coll.gameObject.transform.position.y;
         //if (diff > 0)
         //{
-            if (isShot)
+        if (isShot)
+        {
+            Debug.Log(coll.gameObject);
+
+            if (!end1st)
             {
-                Debug.Log(coll.gameObject);
+                end1st = true;
+                Debug.Log("1回目のジャンプ");
 
-                if (!end1st)
-                {
-                    end1st = true;
-                    Debug.Log("1回目のジャンプ");
+                rb.sharedMaterial = physicsMaterial2D;
+                PlayBoundSe(AudioType.Bound);
 
-                    rb.sharedMaterial = physicsMaterial2D;
+            }
+            else if (!end2nd)
+            {
+                end2nd = true;
+                Debug.Log("2回目のジャンプ");
 
-                }
-                else if (!end2nd)
-                {
-                    end2nd = true;
-                    Debug.Log("2回目のジャンプ");
-                    
-                    if(coll.gameObject.tag == "Ice")
-                    {
-                        Debug.Log("Ice!!!");
-                        rb.sharedMaterial = physicsMaterial2D3;
-                    }
-                    else
-                    {
-                        rb.sharedMaterial = physicsMaterial2D2;
-                    }
-
-                    
-                }
+                rb.sharedMaterial = physicsMaterial2D2;
+                PlayBoundSe(AudioType.Bound);
+                StartCoroutine("checkPos");
             }
 
+            
+            //}
+        }
+    }
 
-        //}
+    private void PlayBoundSe(AudioType type)
+    {
+        var Se = FindObjectOfType<SystemAudioManager>();
+        if (Se != null) Se.ShotSe(type);
+        else Debug.LogError("Sesystemが実装されていません");
+    }
+
+    IEnumerator checkPos()
+    {
+        while(true)
+        {
+            var tempPos = transform.position;
+            yield return new WaitForSeconds(1f);
+            var dis = Vector3.Distance(transform.position, tempPos);
+            Debug.Log(dis);
+            if (dis <= 0.1f)
+            {
+                yield return new WaitForSeconds(1f);
+                PlayBoundSe(AudioType.Dead);
+                yield return new WaitForSeconds(0.5f);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
     }
 }

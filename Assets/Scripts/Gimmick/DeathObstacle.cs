@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Systems.Audio;
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.SceneManagement;
+using AudioType = Systems.Audio.AudioType;
 
 public class DeathObstacle : MonoBehaviour
 {
-    public float restartTime = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,19 +16,20 @@ public class DeathObstacle : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            Destroy(other.gameObject);
-            DOVirtual.DelayedCall(restartTime, () => Reset());
+            PlayBoundSe(AudioType.Bound);
+            StartCoroutine("restart", other.gameObject);
         }
     }
-
-    void Reset()
+    private void PlayBoundSe(AudioType type)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        var Se = FindObjectOfType<SystemAudioManager>();
+        if (Se != null) Se.ShotSe(type);
+        else Debug.LogError("Sesystem‚ªŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator restart(GameObject obj)
     {
-        
+        Destroy(obj);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
