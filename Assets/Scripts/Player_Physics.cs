@@ -28,10 +28,12 @@ public class Player_Physics : MonoBehaviour
     public PhysicsMaterial2D physicsMaterial2D2;
 
     public bool isHold = false;
+    SystemAudioManager Se;//SEを鳴らすためのスクリプト
 
-    // Start is called before the first frame update
     void Start()
     {
+        Se = FindObjectOfType<SystemAudioManager>();
+        if (Se == null) Debug.LogError("Sesystemが実装されていません");
         end1st = false;
         end2nd = false;
         rb = GetComponent<Rigidbody2D>();
@@ -90,6 +92,24 @@ public class Player_Physics : MonoBehaviour
 
                 rb.AddForce(nextVector);
 
+                switch (Se.type)
+                {
+                    case SystemAudioManager.SEtype.metal:
+                        PlayBoundSe(AudioType.MBound);
+                        break;
+                    case SystemAudioManager.SEtype.fantasy:
+                        PlayBoundSe(AudioType.FBound1);
+                        break;
+                    case SystemAudioManager.SEtype.wood:
+                        PlayBoundSe(AudioType.WBound1);
+                        break;
+                    case SystemAudioManager.SEtype.cyber:
+                        PlayBoundSe(AudioType.SBound1);
+                        break;
+                    case SystemAudioManager.SEtype.normal:
+                        PlayBoundSe(AudioType.Bound);
+                        break;
+                }
             }
 
         }
@@ -122,7 +142,25 @@ public class Player_Physics : MonoBehaviour
                 Debug.Log("1回目のジャンプ");
 
                 rb.sharedMaterial = physicsMaterial2D;
-                PlayBoundSe(AudioType.Bound);
+
+                switch(Se.type)
+                {
+                    case SystemAudioManager.SEtype.metal:
+                        PlayBoundSe(AudioType.MBound);
+                        break;
+                    case SystemAudioManager.SEtype.fantasy:
+                        PlayBoundSe(AudioType.FBound2);
+                        break;
+                    case SystemAudioManager.SEtype.wood:
+                        PlayBoundSe(AudioType.WBound2);
+                        break;
+                    case SystemAudioManager.SEtype.cyber:
+                        PlayBoundSe(AudioType.SBound2);
+                        break;
+                    case SystemAudioManager.SEtype.normal:
+                        PlayBoundSe(AudioType.Bound);
+                        break;
+                }
 
             }
             else if (!end2nd)
@@ -131,20 +169,32 @@ public class Player_Physics : MonoBehaviour
                 Debug.Log("2回目のジャンプ");
 
                 rb.sharedMaterial = physicsMaterial2D2;
-                PlayBoundSe(AudioType.Bound);
+                switch (Se.type)
+                {
+                    case SystemAudioManager.SEtype.metal:
+                        PlayBoundSe(AudioType.MBound);
+                        break;
+                    case SystemAudioManager.SEtype.fantasy:
+                        PlayBoundSe(AudioType.FBound2);
+                        break;
+                    case SystemAudioManager.SEtype.wood:
+                        PlayBoundSe(AudioType.WBound3);
+                        break;
+                    case SystemAudioManager.SEtype.cyber:
+                        PlayBoundSe(AudioType.SBound3);
+                        break;
+                    case SystemAudioManager.SEtype.normal:
+                        PlayBoundSe(AudioType.Bound);
+                        break;
+                }
                 StartCoroutine("checkPos");
             }
-
-            
-            //}
         }
     }
 
     private void PlayBoundSe(AudioType type)
     {
-        var Se = FindObjectOfType<SystemAudioManager>();
         if (Se != null) Se.ShotSe(type);
-        else Debug.LogError("Sesystemが実装されていません");
     }
 
     IEnumerator checkPos()
@@ -158,7 +208,25 @@ public class Player_Physics : MonoBehaviour
             if (dis <= 0.1f)
             {
                 yield return new WaitForSeconds(1f);
-                PlayBoundSe(AudioType.Dead);
+                switch (Se.type)
+                {
+                    case SystemAudioManager.SEtype.metal:
+                        PlayBoundSe(AudioType.MDead);
+                        break;
+                    case SystemAudioManager.SEtype.fantasy:
+                        PlayBoundSe(AudioType.FDead);
+                        break;
+                    case SystemAudioManager.SEtype.wood:
+                        PlayBoundSe(AudioType.WDead);
+                        break;
+                    case SystemAudioManager.SEtype.cyber:
+                        PlayBoundSe(AudioType.SDead);
+                        break;
+                    case SystemAudioManager.SEtype.normal:
+                        PlayBoundSe(AudioType.Dead);
+                        break;
+                }
+
                 yield return new WaitForSeconds(0.5f);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }

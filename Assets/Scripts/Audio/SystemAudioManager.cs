@@ -6,6 +6,16 @@ namespace Systems.Audio
 {
     public class SystemAudioManager : MonoBehaviour, ISystemAudioManager
     {
+        public enum SEtype
+        {
+            metal,
+            fantasy,
+            wood,
+            cyber,
+            normal
+        }
+
+        public SEtype type;
         [SerializeField] private AudioSource bgmSource;
         [SerializeField] private List<AudioClip> bgmList;
 
