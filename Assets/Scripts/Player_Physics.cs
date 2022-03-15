@@ -14,8 +14,8 @@ public class Player_Physics : MonoBehaviour
     public float power = 0;
 
     bool isShot = false;
-    bool end1st = false;
-    bool end2nd = false;
+    public static bool end1st = false;
+    public static bool end2nd = false;
 
     bool isEnd = false;
 
@@ -32,7 +32,8 @@ public class Player_Physics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        end1st = false;
+        end2nd = false;
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -125,7 +126,7 @@ public class Player_Physics : MonoBehaviour
 
             }
             else if (!end2nd)
-            {
+            {   
                 end2nd = true;
                 Debug.Log("2回目のジャンプ");
 

@@ -22,6 +22,6 @@ public class MoveFloor : MonoBehaviour
         t += moveAccount;
         transform.position += new Vector3(0, moveAccount, 0);
 
-        if (transform.position.y > 5.25f) Destroy(this.gameObject);
+        Destroy(this.gameObject, 5f);
     }
 }

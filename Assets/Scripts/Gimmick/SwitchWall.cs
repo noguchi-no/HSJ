@@ -23,7 +23,7 @@ public class SwitchWall : MonoBehaviour
     {
         Debug.Log(other.gameObject.name);
 
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Destroy(wall);
         }
