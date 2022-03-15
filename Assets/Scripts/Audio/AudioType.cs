@@ -5,6 +5,23 @@ namespace Systems.Audio
         BGM,
         Bound,
         Goal,
-        Dead
+        Dead,
+        MBound,
+        MGoal,
+        MDead,
+        FBound1,
+        FBound2,
+        FGoal,
+        FDead,
+        SBound1,
+        SBound2,
+        SBound3,
+        SGoal,
+        SDead,
+        WBound1,
+        WBound2,
+        WBound3,
+        WGoal,
+        WDead
     }
 }

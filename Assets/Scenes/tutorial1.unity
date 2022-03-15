@@ -2120,13 +2120,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775712f216b4f124ea8ccd52f6fb4dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   bgmSource: {fileID: 576311528}
   bgmList: []
   seSource: {fileID: 229651405}
   seList:
+  - {fileID: 8300000, guid: c5e1274c67b7327479ad858d2fcbeb66, type: 3}
   - {fileID: 8300000, guid: b943813203c357149bbe23ce60fdd99f, type: 3}
-  - {fileID: 8300000, guid: ccc683778b5d55647b3821d57d0595de, type: 3}
   - {fileID: 8300000, guid: 6b3cbdce36696cc418b4e009999cab6d, type: 3}
+  - {fileID: 8300000, guid: f22e22c00f35a0b45ad2121eebaa23c6, type: 3}
+  - {fileID: 8300000, guid: 9d501d9a3dc01d54ea92b757d6ae41e7, type: 3}
+  - {fileID: 8300000, guid: e1c64c0f1941a4c42b8d9f8384dcb04b, type: 3}
+  - {fileID: 8300000, guid: 675d896c9cf3f1e42ba881d999f8a2a9, type: 3}
+  - {fileID: 8300000, guid: ccc683778b5d55647b3821d57d0595de, type: 3}
+  - {fileID: 8300000, guid: 916df01b3c65c3d49b96295d96f3ccf5, type: 3}
+  - {fileID: 8300000, guid: b45376fb73d27be49bcbdf5e223f902e, type: 3}
+  - {fileID: 8300000, guid: 1259e0e7fd5827d47ae5b5e953a591e7, type: 3}
+  - {fileID: 8300000, guid: 9f61c891f03a44c43a7157387a67df71, type: 3}
+  - {fileID: 8300000, guid: c3e3b2931133d3341a0a8bd0c9bacd62, type: 3}
+  - {fileID: 8300000, guid: f9723161f619d7b47af628de59d05a46, type: 3}
+  - {fileID: 8300000, guid: 7604ff5c29d806640adbe17368fa4bdf, type: 3}
+  - {fileID: 8300000, guid: 74f77bbcc4677084192a032e6a26b439, type: 3}
+  - {fileID: 8300000, guid: 31637139221b6434cba1006035210f09, type: 3}
+  - {fileID: 8300000, guid: 4e63a34ecf96a0f469c2cef94a010800, type: 3}
+  - {fileID: 8300000, guid: 1348fe7fb52107145bfe1fba5c6d2b25, type: 3}
+  - {fileID: 8300000, guid: 052e88cab4704f947ae1661bc14ea882, type: 3}
 --- !u!4 &2122805306
 Transform:
   m_ObjectHideFlags: 0
