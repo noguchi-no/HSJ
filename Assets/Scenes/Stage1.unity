@@ -705,6 +705,7 @@ MonoBehaviour:
   power: 0
   physicsMaterial2D: {fileID: 6200000, guid: 537d2fc48707b3a46b59d4262a753599, type: 2}
   physicsMaterial2D2: {fileID: 6200000, guid: 4ce73c0b54944fb4f96f2084314683bf, type: 2}
+  isHold: 0
 --- !u!1 &1375270021
 GameObject:
   m_ObjectHideFlags: 0

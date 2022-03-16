@@ -20,11 +20,20 @@ public class DeathObstacle : MonoBehaviour
             StartCoroutine("restart", other.gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Player")
+        {
+            PlayBoundSe(AudioType.Bound);
+            StartCoroutine("restart", other.gameObject);
+        }  
+    }
+
     private void PlayBoundSe(AudioType type)
     {
         var Se = FindObjectOfType<SystemAudioManager>();
         if (Se != null) Se.ShotSe(type);
-        else Debug.LogError("Sesystem‚ªŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+        else Debug.LogError("Sesystemï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
     }
     IEnumerator restart(GameObject obj)
     {

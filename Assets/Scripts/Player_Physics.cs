@@ -75,6 +75,8 @@ public class Player_Physics : MonoBehaviour
                 isHold = false;
                 isShot = true;
 
+                transform.GetChild(0).gameObject.SetActive(false);
+
                 endPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 
                 //vec = new Vector2(startPos.x - endPos.x, startPos.y - endPos.y);
