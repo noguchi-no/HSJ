@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edc7d5ab15779740963b20205b94b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  physicsMaterial2D: {fileID: 0}
 --- !u!58 &110525673
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2383,7 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775712f216b4f124ea8ccd52f6fb4dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 4
   bgmSource: {fileID: 2083540164}
   bgmList: []
   seSource: {fileID: 191813200}

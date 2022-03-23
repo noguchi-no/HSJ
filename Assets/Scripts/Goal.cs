@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Systems.Audio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using AudioType = Systems.Audio.AudioType;
 
 public class Goal : MonoBehaviour
 {
+    [SerializeField]
+    private SceneObject nextScene;
     SystemAudioManager Se;//SEを鳴らすためのスクリプト
     private void Start()
     {
@@ -40,6 +43,8 @@ public class Goal : MonoBehaviour
                     PlayBoundSe(AudioType.Goal);
                     break;
             }
+            if (nextScene == null) return;
+            FadeManager.Instance.LoadScene(nextScene, 0.3f);
         }
     }
 
