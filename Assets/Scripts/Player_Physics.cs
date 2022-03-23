@@ -12,6 +12,7 @@ public class Player_Physics : MonoBehaviour
 
     public float angle = 0;
     public float power = 0;
+    public float shotPower = 0;
 
     bool isShot = false;
     public static bool end1st = false;
@@ -29,6 +30,10 @@ public class Player_Physics : MonoBehaviour
 
     public bool isHold = false;
     SystemAudioManager Se;//SEを鳴らすためのスクリプト
+    [SerializeField]
+    private GameObject BoundEffect;
+    [SerializeField]
+    private GameObject BreakEffect;
 
     void Start()
     {
@@ -37,7 +42,7 @@ public class Player_Physics : MonoBehaviour
         end1st = false;
         end2nd = false;
         rb = GetComponent<Rigidbody2D>();
-
+        if (BoundEffect == null) Debug.Log("BoundEffectが設定されていません");
     }
 
     // Update is called once per frame
@@ -54,7 +59,6 @@ public class Player_Physics : MonoBehaviour
 
         if (!isShot)
         {
-
             if (Input.GetMouseButtonDown(0))
             {
                 isHold = false;
@@ -68,7 +72,19 @@ public class Player_Physics : MonoBehaviour
                 power = tempVec.magnitude;
 
                 angle = CalculateAngle(tempVec);
-
+                if (power > 600)
+                {
+                    shotPower = 400;
+                }
+                else if (power > 200)
+                {
+                    shotPower = 200 + (power - 200) / 2;
+                }
+                else if (power < 10)
+                {
+                    shotPower = 10;
+                }
+                else shotPower = power;
             }
             else if (Input.GetMouseButtonUp(0))
             {
@@ -81,16 +97,7 @@ public class Player_Physics : MonoBehaviour
 
                 //vec = new Vector2(startPos.x - endPos.x, startPos.y - endPos.y);
 
-                if (power > 400)
-                {
-                    power = 400;
-                }
-                else if (power < 10)
-                {
-                    power = 10;
-                }
-
-                Vector2 nextVector = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * power;
+                Vector2 nextVector = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * shotPower;
 
                 rb.AddForce(nextVector);
 
@@ -138,6 +145,8 @@ public class Player_Physics : MonoBehaviour
         {
             Debug.Log(coll.gameObject);
 
+            var effect = Instantiate(BoundEffect, transform);
+            effect.transform.parent = null;
             if (!end1st)
             {
                 end1st = true;
@@ -166,8 +175,7 @@ public class Player_Physics : MonoBehaviour
 
             }
             else if (!end2nd)
-            {   
-                end2nd = true;
+            {
                 Debug.Log("2回目のジャンプ");
 
                 rb.sharedMaterial = physicsMaterial2D2;
@@ -229,6 +237,8 @@ public class Player_Physics : MonoBehaviour
                         break;
                 }
 
+                var effect = Instantiate(BreakEffect, transform);
+                effect.transform.parent = null;
                 yield return new WaitForSeconds(0.5f);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }

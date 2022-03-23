@@ -18,13 +18,13 @@ public class Arrow : MonoBehaviour
     void Update()
     {
 
-        float power = player_Physics.power / 100.0f;
-
-        if (player_Physics.power > 300)
+        float power = player_Physics.shotPower / 100.0f;
+        /*
+        if (player_Physics.power > 500)
         {
             power = 5;
         }
-
+        */
         transform.localScale = new Vector3(power, 1.0f, 1.0f);
         transform.rotation = Quaternion.AngleAxis(player_Physics.angle, new Vector3(0, 0, 1));
         //transform.localScale = new Vector3(player.power/100.0f, 1.0f, 1.0f);
