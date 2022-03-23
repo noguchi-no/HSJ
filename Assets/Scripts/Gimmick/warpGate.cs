@@ -17,11 +17,20 @@ public class warpGate : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
+            Debug.Log("warp");
+            col.gameObject.transform.position = WarpPoint.position;
+            
+        }
+    }
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            Debug.Log("warp");
             col.gameObject.transform.position = WarpPoint.position;
             
         }

@@ -1,19 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PenetratingFloor : MonoBehaviour
 {
     [SerializeField]
     private Collider2D CheckPos;
 
+    public GameObject arrow;
+    public float moveLength = 1f; 
+    public float duration;
+    public Ease easeType;
+
     void Start()
-    {
+    {   
+        var sequence = DOTween.Sequence();
+        sequence.Append(arrow.transform.DOLocalMoveY(moveLength, duration).SetEase(easeType));
+        sequence.Append(arrow.GetComponent<SpriteRenderer>().DOFade(0, 1f));
+        sequence.SetLoops(-1);
+
         CheckPos.isTrigger = true;
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("ƒRƒ‰ƒCƒ_[‚É“ü‚Á‚½");
+        Debug.Log("ï¿½Rï¿½ï¿½ï¿½Cï¿½_ï¿½[ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½");
         if(col.tag == "Player" && checkDistance(col.gameObject))
         {
             CheckPos.isTrigger = true;
