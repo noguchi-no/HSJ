@@ -6,12 +6,12 @@ using AudioType = Systems.Audio.AudioType;
 
 public class Goal : MonoBehaviour
 {
-    SystemAudioManager Se;//SE‚ð–Â‚ç‚·‚½‚ß‚ÌƒXƒNƒŠƒvƒg
+    SystemAudioManager Se;//SEï¿½ï¿½Â‚ç‚·ï¿½ï¿½ï¿½ß‚ÌƒXï¿½Nï¿½ï¿½ï¿½vï¿½g
     private void Start()
     {
 
         Se = FindObjectOfType<SystemAudioManager>();
-        if (Se == null) Debug.LogError("Sesystem‚ªŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+        if (Se == null) Debug.LogError("Sesystemï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
     }
 
     void OnTriggerEnter2D(Collider2D other)
