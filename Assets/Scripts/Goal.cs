@@ -7,14 +7,15 @@ using AudioType = Systems.Audio.AudioType;
 
 public class Goal : MonoBehaviour
 {
-    [SerializeField]
-    private SceneObject nextScene;
     SystemAudioManager Se;//SEを鳴らすためのスクリプト
+    StageManager StageManager;
     private void Start()
     {
 
         Se = FindObjectOfType<SystemAudioManager>();
+        StageManager = FindObjectOfType<StageManager>();
         if (Se == null) Debug.LogError("Sesystemが実装されていません");
+        if (StageManager == null) Debug.LogError("StageManagerが実装されていません");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -43,8 +44,7 @@ public class Goal : MonoBehaviour
                     PlayBoundSe(AudioType.Goal);
                     break;
             }
-            if (nextScene == null) return;
-            FadeManager.Instance.LoadScene(nextScene, 0.3f);
+            StageManager.stageClear();
         }
     }
 
@@ -52,4 +52,5 @@ public class Goal : MonoBehaviour
     {
         if (Se != null) Se.ShotSe(type);
     }
+
 }

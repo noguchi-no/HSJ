@@ -30,6 +30,7 @@ public class Player_Physics : MonoBehaviour
 
     public bool isHold = false;
     SystemAudioManager Se;//SEを鳴らすためのスクリプト
+    private bool TitleCall = true;
     [SerializeField]
     private GameObject BoundEffect;
     [SerializeField]
@@ -43,15 +44,15 @@ public class Player_Physics : MonoBehaviour
         end2nd = false;
         rb = GetComponent<Rigidbody2D>();
         if (BoundEffect == null) Debug.Log("BoundEffectが設定されていません");
+        StartCoroutine("titleCallTimer");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Shot();
+            Shot();
 
-        if (Input.GetKeyDown("r")) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
+            if (Input.GetKeyDown("r")) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void Shot()
@@ -69,8 +70,10 @@ public class Player_Physics : MonoBehaviour
                 isHold = true;
                 Vector2 tempVec = new Vector2(startPos.x - Input.mousePosition.x, startPos.y - Input.mousePosition.y);
 
-                power = tempVec.magnitude;
-
+                if (!TitleCall)
+                {
+                    power = tempVec.magnitude;
+                }
                 angle = CalculateAngle(tempVec);
                 if (power > 600)
                 {
@@ -214,7 +217,7 @@ public class Player_Physics : MonoBehaviour
             var tempPos = transform.position;
             yield return new WaitForSeconds(1f);
             var dis = Vector3.Distance(transform.position, tempPos);
-            Debug.Log(dis);
+            //Debug.Log(dis);
             if (dis <= 0.1f)
             {
                 yield return new WaitForSeconds(1f);
@@ -243,5 +246,10 @@ public class Player_Physics : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
+    }
+    IEnumerator titleCallTimer()
+    {
+        yield return new WaitForSeconds(2f);
+        TitleCall = false;
     }
 }
