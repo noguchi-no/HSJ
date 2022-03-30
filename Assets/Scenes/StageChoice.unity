@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 376395}
   - component: {fileID: 376394}
   m_Layer: 5
-  m_Name: StageSelectButton (5)
+  m_Name: Stage6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 3962067}
   - component: {fileID: 3962066}
   m_Layer: 5
-  m_Name: StageSelectButton (13)
+  m_Name: Stage14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 58064692}
   - component: {fileID: 58064691}
   m_Layer: 5
-  m_Name: StageSelectButton (28)
+  m_Name: Stage29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +631,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 30
 --- !u!222 &62052744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -789,7 +789,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 18
 --- !u!222 &141947936
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 154726566}
   - component: {fileID: 154726565}
   m_Layer: 5
-  m_Name: StageSelectButton (8)
+  m_Name: Stage9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,7 +958,7 @@ GameObject:
   - component: {fileID: 180860189}
   - component: {fileID: 180860188}
   m_Layer: 5
-  m_Name: StageSelectButton (10)
+  m_Name: Stage11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,7 +1239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 12
 --- !u!222 &191558864
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1318,7 +1318,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 20
 --- !u!222 &219615281
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1420,7 +1420,7 @@ GameObject:
   - component: {fileID: 286065133}
   - component: {fileID: 286065132}
   m_Layer: 5
-  m_Name: StageSelectButton (17)
+  m_Name: Stage18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1768,7 +1768,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 8
 --- !u!222 &353918227
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2364,7 +2364,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 21
 --- !u!222 &435330878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2443,7 +2443,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 15
 --- !u!222 &465230086
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2612,7 +2612,7 @@ GameObject:
   - component: {fileID: 520577485}
   - component: {fileID: 520577484}
   m_Layer: 5
-  m_Name: StageSelectButton (9)
+  m_Name: Stage10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2814,7 +2814,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 23
 --- !u!222 &520599618
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2837,7 +2837,7 @@ GameObject:
   - component: {fileID: 525386841}
   - component: {fileID: 525386840}
   m_Layer: 5
-  m_Name: StageSelectButton (21)
+  m_Name: Stage22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3350,7 +3350,7 @@ GameObject:
   - component: {fileID: 579379893}
   - component: {fileID: 579379892}
   m_Layer: 5
-  m_Name: StageSelectButton (18)
+  m_Name: Stage19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3496,7 +3496,7 @@ GameObject:
   - component: {fileID: 592529542}
   - component: {fileID: 592529541}
   m_Layer: 5
-  m_Name: StageSelectButton (11)
+  m_Name: Stage12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4069,7 +4069,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 11
 --- !u!222 &711420172
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4238,7 +4238,7 @@ GameObject:
   - component: {fileID: 754905143}
   - component: {fileID: 754905142}
   m_Layer: 5
-  m_Name: StageSelectButton (22)
+  m_Name: Stage23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4609,7 +4609,7 @@ GameObject:
   - component: {fileID: 800684043}
   - component: {fileID: 800684042}
   m_Layer: 5
-  m_Name: StageSelectButton (27)
+  m_Name: Stage28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4957,7 +4957,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 13
 --- !u!222 &819554206
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4980,7 +4980,7 @@ GameObject:
   - component: {fileID: 869562511}
   - component: {fileID: 869562510}
   m_Layer: 5
-  m_Name: StageSelectButton (3)
+  m_Name: Stage4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5721,7 +5721,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 14
 --- !u!222 &970121974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5744,7 +5744,7 @@ GameObject:
   - component: {fileID: 987296473}
   - component: {fileID: 987296472}
   m_Layer: 5
-  m_Name: StageSelectButton (29)
+  m_Name: Stage30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5939,7 +5939,7 @@ GameObject:
   - component: {fileID: 1038321735}
   - component: {fileID: 1038321734}
   m_Layer: 5
-  m_Name: StageSelectButton (6)
+  m_Name: Stage7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6141,7 +6141,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 25
 --- !u!222 &1109596651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6870,7 +6870,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 28
 --- !u!222 &1257585565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6985,7 +6985,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 29
 --- !u!222 &1280919207
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7008,7 +7008,7 @@ GameObject:
   - component: {fileID: 1291240975}
   - component: {fileID: 1291240974}
   m_Layer: 5
-  m_Name: StageSelectButton (19)
+  m_Name: Stage20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7379,7 +7379,7 @@ GameObject:
   - component: {fileID: 1351701799}
   - component: {fileID: 1351701798}
   m_Layer: 5
-  m_Name: StageSelectButton (2)
+  m_Name: Stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7581,7 +7581,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 22
 --- !u!222 &1366648250
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7604,7 +7604,7 @@ GameObject:
   - component: {fileID: 1380820595}
   - component: {fileID: 1380820594}
   m_Layer: 5
-  m_Name: StageSelectButton (26)
+  m_Name: Stage27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8031,7 +8031,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 6
 --- !u!222 &1400536333
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8110,7 +8110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 10
 --- !u!222 &1417539142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8358,7 +8358,7 @@ GameObject:
   - component: {fileID: 1485995846}
   - component: {fileID: 1485995845}
   m_Layer: 5
-  m_Name: StageSelectButton (7)
+  m_Name: Stage8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8583,7 +8583,7 @@ GameObject:
   - component: {fileID: 1540108676}
   - component: {fileID: 1540108675}
   m_Layer: 5
-  m_Name: StageSelectButton (4)
+  m_Name: Stage5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8785,7 +8785,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 17
 --- !u!222 &1550083335
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9010,7 +9010,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 16
 --- !u!222 &1599495052
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9324,7 +9324,7 @@ GameObject:
   - component: {fileID: 1662218186}
   - component: {fileID: 1662218185}
   m_Layer: 5
-  m_Name: StageSelectButton (20)
+  m_Name: Stage21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9526,7 +9526,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 24
 --- !u!222 &1698775950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9605,7 +9605,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 26
 --- !u!222 &1731979997
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9736,7 +9736,7 @@ GameObject:
   - component: {fileID: 1751004094}
   - component: {fileID: 1751004093}
   m_Layer: 5
-  m_Name: StageSelectButton (14)
+  m_Name: Stage15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9882,7 +9882,7 @@ GameObject:
   - component: {fileID: 1763166493}
   - component: {fileID: 1763166492}
   m_Layer: 5
-  m_Name: StageSelectButton (25)
+  m_Name: Stage26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10084,7 +10084,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 7
 --- !u!222 &1777871710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10344,7 +10344,7 @@ GameObject:
   - component: {fileID: 1856396799}
   - component: {fileID: 1856396798}
   m_Layer: 5
-  m_Name: StageSelectButton (16)
+  m_Name: Stage17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10490,7 +10490,7 @@ GameObject:
   - component: {fileID: 1892435624}
   - component: {fileID: 1892435623}
   m_Layer: 5
-  m_Name: StageSelectButton (23)
+  m_Name: Stage24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10996,7 +10996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 19
 --- !u!222 &1940655748
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11327,7 +11327,7 @@ GameObject:
   - component: {fileID: 2009293454}
   - component: {fileID: 2009293453}
   m_Layer: 5
-  m_Name: StageSelectButton (24)
+  m_Name: Stage25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11473,7 +11473,7 @@ GameObject:
   - component: {fileID: 2022746333}
   - component: {fileID: 2022746332}
   m_Layer: 5
-  m_Name: StageSelectButton (12)
+  m_Name: Stage13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11675,7 +11675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 27
 --- !u!222 &2032080258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11935,7 +11935,7 @@ GameObject:
   - component: {fileID: 2080695411}
   - component: {fileID: 2080695410}
   m_Layer: 5
-  m_Name: StageSelectButton (15)
+  m_Name: Stage16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12081,7 +12081,7 @@ GameObject:
   - component: {fileID: 2101644142}
   - component: {fileID: 2101644141}
   m_Layer: 5
-  m_Name: StageSelectButton (1)
+  m_Name: Stage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12283,7 +12283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 9
 --- !u!222 &2121066010
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12306,7 +12306,7 @@ GameObject:
   - component: {fileID: 2140367616}
   - component: {fileID: 2140367619}
   m_Layer: 5
-  m_Name: StageSelectButton
+  m_Name: Stage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

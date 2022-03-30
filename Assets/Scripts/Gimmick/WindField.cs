@@ -23,7 +23,6 @@ public class WindField : MonoBehaviour
     {
         if (col.tag == "Player" && col.TryGetComponent(out Rigidbody2D rb))
         {
-            Debug.Log("���̗͂��󂯂Ă���");
             rb.AddForce(force);
         }
     }

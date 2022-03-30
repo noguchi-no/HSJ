@@ -41,6 +41,12 @@ public class StageManager : MonoBehaviour
     private Stage nowStage;
     private Text TitleText;
     private Text SubTitleText;
+    private GameObject StageClearText;
+    [SerializeField]
+    private SceneObject nextScene;
+    [SerializeField]
+    private int nowStageNum;
+
 
     #region
     static bool stage1 = false;
@@ -73,6 +79,8 @@ public class StageManager : MonoBehaviour
     {
         TitleText = GameObject.Find("TitleText").GetComponent<Text>();
         SubTitleText = GameObject.Find("SubTitleText").GetComponent<Text>();
+        StageClearText = GameObject.Find("StageClear");
+        StageClearText.SetActive(false);
         switch (nowStage)
         {
             case Stage.stage1:
@@ -83,6 +91,21 @@ public class StageManager : MonoBehaviour
                 stage1 = true;
                 break;
         }
+    }
+
+    public void stageClear()
+    {
+        StageClearText.SetActive(true);
+        StartCoroutine("SceneChange");
+    }
+
+    IEnumerator SceneChange()
+    {
+        PlayerPrefs.SetInt("stageNum", nowStageNum);
+        PlayerPrefs.Save();
+        yield return new WaitForSeconds(3f);
+
+        FadeManager.Instance.LoadScene(nextScene, 0.3f);
     }
 
 }
