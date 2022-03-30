@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\Gimmick\WindField.cs" />
      <Compile Include="Assets\Scripts\Gimmick\IceFloor.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerFriction.cs" />
+     <Compile Include="Assets\Scripts\Gimmick\SinFloorV.cs" />
      <Compile Include="Assets\Scripts\Gimmick\RotateWall.cs" />
      <Compile Include="Assets\naichilab\FadeManager\Sample\FadeSample.cs" />
      <Compile Include="Assets\Scripts\Gimmick\Game8Manager.cs" />
@@ -55,6 +56,7 @@
      <Compile Include="Assets\Scripts\RigidbodySimulate.cs" />
      <Compile Include="Assets\Scripts\Player_Physics.cs" />
      <Compile Include="Assets\Scripts\Gimmick\PenetratingFloor.cs" />
+     <Compile Include="Assets\Scripts\Gimmick\Minimini.cs" />
      <Compile Include="Assets\Scripts\Arrow.cs" />
      <Compile Include="Assets\Scripts\Gimmick\MoveFloor.cs" />
      <Compile Include="Assets\Scripts\Gimmick\SinFloor.cs" />
@@ -73,8 +75,7 @@
      <Compile Include="Assets\Scripts\Audio\ISystemAudioManager.cs" />
      <Compile Include="Assets\Scripts\SceneChange\ToStage.cs" />
      <Compile Include="Assets\Scripts\Gimmick\SecondPlayer.cs" />
-     <Compile Include="Assets\Scripts\Gimmick\Minimini.cs" />
-     <Compile Include="Assets\Scripts\Gimmick\SinFloorV.cs" />
+     <Compile Include="Assets\Scripts\Gimmick\GimmikGenerator.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.19f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -23,12 +23,11 @@ public class Ball : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D coll)
-    {
-
-        if (cnt == 2) {
+    { 
+        
+        if(cnt == 1) {
             Destroy(this.gameObject);
-        } else if(cnt == 1) {
-            rb.sharedMaterial = physicsMaterial2D;
+            //rb.sharedMaterial = physicsMaterial2D;
         }
 
         cnt++;
