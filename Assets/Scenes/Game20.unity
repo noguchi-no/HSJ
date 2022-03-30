@@ -389,6 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f9aa8b2340fca4e94d26a666ccec1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene:
+    m_SceneName: 
 --- !u!1 &241993659
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,9 +626,12 @@ MonoBehaviour:
   stage: 
   angle: 0
   power: 0
+  shotPower: 0
   physicsMaterial2D: {fileID: 6200000, guid: 537d2fc48707b3a46b59d4262a753599, type: 2}
   physicsMaterial2D2: {fileID: 6200000, guid: 4ce73c0b54944fb4f96f2084314683bf, type: 2}
   isHold: 0
+  BoundEffect: {fileID: 0}
+  BreakEffect: {fileID: 0}
 --- !u!58 &662755312
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class OnceThroughCircle : MonoBehaviour
 {
     private Collider2D CircleCol;
@@ -14,6 +15,7 @@ public class OnceThroughCircle : MonoBehaviour
     {
         if (col.tag == "Player" && col.TryGetComponent(out Rigidbody2D rb))
         {
+            GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 200f);
             CircleCol.isTrigger = false;
         }
     }
