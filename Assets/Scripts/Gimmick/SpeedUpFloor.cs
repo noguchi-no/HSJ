@@ -13,8 +13,12 @@ public class SpeedUpFloor : MonoBehaviour
     public float duration = 1f;
     public Ease easeType;
 
+    public AudioClip speedUpSound;
+    AudioSource audioSource;
+
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         Bounds bounds = spriteRenderer.bounds;
         Vector3 vector3 = bounds.size;
@@ -38,9 +42,13 @@ public class SpeedUpFloor : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        
-        rb = player.GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector3(3.0f*rb.velocity.x, rb.velocity.y, 0);
+
+        if(other.gameObject.tag == "Player")
+        {
+            audioSource.PlayOneShot(speedUpSound);
+            rb = player.GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector3(3.0f*rb.velocity.x, rb.velocity.y, 0);
+        }
     }
 
     // Update is called once per frame

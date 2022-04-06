@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class IceFloor : MonoBehaviour
 {
@@ -8,10 +9,18 @@ public class IceFloor : MonoBehaviour
     public PhysicsMaterial2D physicsMaterial2D3;
     public PhysicsMaterial2D physicsMaterial2D2;
     //public static bool isIced;
+    public GameObject bigIceSprite;
+    public GameObject smallIceSprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        bigIceSprite.transform.DOLocalRotate(new Vector3(0.0f, 360.0f, 0), 2.0f)
+                                    .SetRelative(true)
+                                    .SetLoops(-1);
+        smallIceSprite.transform.DOLocalRotate(new Vector3(0.0f, 360.0f, 0), 2.0f)
+                                    .SetRelative(true)
+                                    .SetLoops(-1);
         //isIced = false;
     }
 

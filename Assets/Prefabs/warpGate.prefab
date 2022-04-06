@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2218010118941219662}
   - component: {fileID: 9190142482699997695}
   m_Layer: 0
-  m_Name: black-hole-png-icon-556661
+  m_Name: BlackHoleIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

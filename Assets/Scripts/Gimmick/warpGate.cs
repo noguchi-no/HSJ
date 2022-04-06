@@ -11,13 +11,17 @@ public class warpGate : MonoBehaviour
     public GameObject iconOverTarget;
     Vector3 playerScale;
     public GameObject player;
-    public float duration;
-    public float interval;
+    public float duration = 0.3f;
+    //public float interval;
     Rigidbody2D rb;
     Vector3 playerVelocity;
+
+    public AudioClip enterSound;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = player.GetComponent<Rigidbody2D>();
         playerScale = player.transform.localScale;
         Debug.Log(playerScale);
@@ -53,6 +57,7 @@ public class warpGate : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            audioSource.PlayOneShot(enterSound);
             Debug.Log("warp");
             Sequence seq = DOTween.Sequence();
             seq.Append(col.gameObject.transform.DOScale(Vector2.zero, duration))

@@ -291,3 +291,5 @@ MonoBehaviour:
   PlayerRB: {fileID: 0}
   physicsMaterial2D3: {fileID: 6200000, guid: 9c2fdbef2f55f415b9abbd76db3d6fca, type: 2}
   physicsMaterial2D2: {fileID: 6200000, guid: 4ce73c0b54944fb4f96f2084314683bf, type: 2}
+  bigIceSprite: {fileID: 1132060493}
+  smallIceSprite: {fileID: 963935007}

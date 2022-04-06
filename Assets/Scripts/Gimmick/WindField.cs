@@ -12,8 +12,12 @@ public class WindField : MonoBehaviour
     public GameObject windIcon;
     public Vector3 moveVec;
     public float duration;
+
+    public AudioClip windSound;
+    AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         var sequence = DOTween.Sequence();
         sequence.Append(windIcon.transform.DOLocalMove(moveVec, duration));
         sequence.Join(windIcon.GetComponent<SpriteRenderer>().DOFade(0, duration).SetEase(Ease.InQuart));
@@ -24,6 +28,13 @@ public class WindField : MonoBehaviour
         if (col.tag == "Player" && col.TryGetComponent(out Rigidbody2D rb))
         {
             rb.AddForce(force);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            audioSource.PlayOneShot(windSound);
         }
     }
 }

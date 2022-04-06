@@ -12,9 +12,12 @@ public class Minimini : MonoBehaviour
     public Ease easeType;
     //public float moveLength;
     public Vector3 vec = new Vector3();
+    public AudioClip miniSound;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         var sequence = DOTween.Sequence();
         sequence.Append(rightArrow.transform.DOLocalMove(vec * 1.5f , duration).SetEase(easeType));
         sequence.Join(rightArrow.transform.DOScale(new Vector3(smallSize, smallSize, 1), duration).SetEase(easeType));
@@ -40,10 +43,10 @@ public class Minimini : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Player")
         {
-
+            audioSource.PlayOneShot(miniSound);
             other.gameObject.transform.localScale = new Vector3(0.1f, 0.1f,1.0f);
             
-            Destroy(this.gameObject);
+            //DOVirtual.DelayedCall (0.2f, ()=> Destroy(this.gameObject));
         }  
     }
 

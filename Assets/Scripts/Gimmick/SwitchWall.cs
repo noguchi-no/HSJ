@@ -12,10 +12,13 @@ public class SwitchWall : MonoBehaviour
     public float duration = 1f;
     public float length = 10f;
 
+    public AudioClip switchSound;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,7 +37,11 @@ public class SwitchWall : MonoBehaviour
             onSwitch.SetActive(true);
             gameObject.transform.DOScaleY(0, duration);
             //Destroy(wall);
-            wall.transform.DOLocalMoveY(length,0.5f);
+            audioSource.PlayOneShot(switchSound);
+
+            wall.transform.DOLocalMoveY(length,0.5f)
+            .OnComplete(() => Destroy(gameObject)); 
+            
         }
     }
 }
