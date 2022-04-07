@@ -13,12 +13,12 @@ public class PenetratingFloor : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("ƒRƒ‰ƒCƒ_[‚É“ü‚Á‚½");
-        if(col.tag == "Player" && checkDistance(col.gameObject))
+        Debug.Log("ï¿½Rï¿½ï¿½ï¿½Cï¿½_ï¿½[ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½");
+        if((col.tag == "Ball" || col.tag == "Player") && checkDistance(col.gameObject))
         {
             CheckPos.isTrigger = true;
         }
-        else if (col.tag == "Player" && !checkDistance(col.gameObject))
+        else if ((col.tag == "Ball" || col.tag == "Player") && !checkDistance(col.gameObject))
         {
             CheckPos.isTrigger = false;
         }
@@ -26,7 +26,7 @@ public class PenetratingFloor : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.tag == "Player" && !checkDistance(col.gameObject))
+        if ((col.tag == "Ball" || col.tag == "Player") && !checkDistance(col.gameObject))
         {
             CheckPos.isTrigger = false;
         }
