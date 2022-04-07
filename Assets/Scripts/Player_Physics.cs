@@ -30,11 +30,14 @@ public class Player_Physics : MonoBehaviour
 
     public bool isHold = false;
     SystemAudioManager Se;//SEを鳴らすためのスクリプト
-    private bool TitleCall = true;
+    private bool TitleCall = false;
     [SerializeField]
     private GameObject BoundEffect;
     [SerializeField]
     private GameObject BreakEffect;
+    [SerializeField]
+    private bool Player2p = false;
+    private GameObject Player2;
 
     void Start()
     {
@@ -44,6 +47,7 @@ public class Player_Physics : MonoBehaviour
         end2nd = false;
         rb = GetComponent<Rigidbody2D>();
         if (BoundEffect == null) Debug.Log("BoundEffectが設定されていません");
+        if (Player2p) Player2 = GameObject.Find("Player2");
         StartCoroutine("titleCallTimer");
     }
 
@@ -92,40 +96,48 @@ public class Player_Physics : MonoBehaviour
             else if (Input.GetMouseButtonUp(0))
             {
                 isHold = false;
-                isShot = true;
 
-                //transform.GetChild(0).gameObject.SetActive(false);
-
-                endPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
-                //vec = new Vector2(startPos.x - endPos.x, startPos.y - endPos.y);
-
-                Vector2 nextVector = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * shotPower;
-
-                rb.AddForce(nextVector);
-
-                switch (Se.type)
+                if (!TitleCall)
                 {
-                    case SystemAudioManager.SEtype.metal:
-                        PlayBoundSe(AudioType.MBound);
-                        break;
-                    case SystemAudioManager.SEtype.fantasy:
-                        PlayBoundSe(AudioType.FBound1);
-                        break;
-                    case SystemAudioManager.SEtype.wood:
-                        PlayBoundSe(AudioType.WBound1);
-                        break;
-                    case SystemAudioManager.SEtype.cyber:
-                        PlayBoundSe(AudioType.SBound1);
-                        break;
-                    case SystemAudioManager.SEtype.normal:
-                        PlayBoundSe(AudioType.Bound);
-                        break;
+                    isShot = true;
+                    //transform.GetChild(0).gameObject.SetActive(false);
+
+                    endPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
+                    //vec = new Vector2(startPos.x - endPos.x, startPos.y - endPos.y);
+
+                    Vector2 nextVector = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * shotPower;
+
+                    rb.AddForce(nextVector);
+
+                    switch (Se.type)
+                    {
+                        case SystemAudioManager.SEtype.metal:
+                            PlayBoundSe(AudioType.MBound);
+                            break;
+                        case SystemAudioManager.SEtype.fantasy:
+                            PlayBoundSe(AudioType.FBound1);
+                            break;
+                        case SystemAudioManager.SEtype.wood:
+                            PlayBoundSe(AudioType.WBound1);
+                            break;
+                        case SystemAudioManager.SEtype.cyber:
+                            PlayBoundSe(AudioType.SBound1);
+                            break;
+                        case SystemAudioManager.SEtype.normal:
+                            PlayBoundSe(AudioType.Bound);
+                            break;
+                    }
                 }
             }
 
         }
 
+    }
+
+    public void titleCallPowerWait()
+    {
+        TitleCall = true;
     }
 
     float CalculateAngle(Vector2 _vec)
@@ -200,7 +212,7 @@ public class Player_Physics : MonoBehaviour
                         PlayBoundSe(AudioType.Bound);
                         break;
                 }
-                StartCoroutine("checkPos");
+                StartCoroutine(checkPos());
             }
         }
     }
@@ -212,7 +224,7 @@ public class Player_Physics : MonoBehaviour
 
     IEnumerator checkPos()
     {
-        while(true)
+        while (true)
         {
             var tempPos = transform.position;
             yield return new WaitForSeconds(1f);
@@ -220,33 +232,72 @@ public class Player_Physics : MonoBehaviour
             //Debug.Log(dis);
             if (dis <= 0.1f)
             {
-                yield return new WaitForSeconds(1f);
-                switch (Se.type)
+                if (Player2p)
                 {
-                    case SystemAudioManager.SEtype.metal:
-                        PlayBoundSe(AudioType.MDead);
-                        break;
-                    case SystemAudioManager.SEtype.fantasy:
-                        PlayBoundSe(AudioType.FDead);
-                        break;
-                    case SystemAudioManager.SEtype.wood:
-                        PlayBoundSe(AudioType.WDead);
-                        break;
-                    case SystemAudioManager.SEtype.cyber:
-                        PlayBoundSe(AudioType.SDead);
-                        break;
-                    case SystemAudioManager.SEtype.normal:
-                        PlayBoundSe(AudioType.Dead);
-                        break;
-                }
 
-                var effect = Instantiate(BreakEffect, transform);
-                effect.transform.parent = null;
-                yield return new WaitForSeconds(0.5f);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    var tempPos2 = Player2.transform.position;
+                    yield return new WaitForSeconds(1f);
+                    var dis2 = Vector3.Distance(Player2.transform.position, tempPos2); if (dis <= 0.1f)
+                        if (dis2 <= 0.1f)
+                        {
+                            yield return new WaitForSeconds(1f);
+                            switch (Se.type)
+                            {
+                                case SystemAudioManager.SEtype.metal:
+                                    PlayBoundSe(AudioType.MDead);
+                                    break;
+                                case SystemAudioManager.SEtype.fantasy:
+                                    PlayBoundSe(AudioType.FDead);
+                                    break;
+                                case SystemAudioManager.SEtype.wood:
+                                    PlayBoundSe(AudioType.WDead);
+                                    break;
+                                case SystemAudioManager.SEtype.cyber:
+                                    PlayBoundSe(AudioType.SDead);
+                                    break;
+                                case SystemAudioManager.SEtype.normal:
+                                    PlayBoundSe(AudioType.Dead);
+                                    break;
+                            }
+
+
+                            var effect = Instantiate(BreakEffect, transform);
+                            effect.transform.parent = null;
+                            yield return new WaitForSeconds(0.5f);
+                            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                        }
+                }
+                else
+                {
+                    yield return new WaitForSeconds(1f);
+                    switch (Se.type)
+                    {
+                        case SystemAudioManager.SEtype.metal:
+                            PlayBoundSe(AudioType.MDead);
+                            break;
+                        case SystemAudioManager.SEtype.fantasy:
+                            PlayBoundSe(AudioType.FDead);
+                            break;
+                        case SystemAudioManager.SEtype.wood:
+                            PlayBoundSe(AudioType.WDead);
+                            break;
+                        case SystemAudioManager.SEtype.cyber:
+                            PlayBoundSe(AudioType.SDead);
+                            break;
+                        case SystemAudioManager.SEtype.normal:
+                            PlayBoundSe(AudioType.Dead);
+                            break;
+                    }
+
+
+                    var effect = Instantiate(BreakEffect, transform);
+                    effect.transform.parent = null;
+                    yield return new WaitForSeconds(0.5f);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
             }
         }
-    }
+}
     IEnumerator titleCallTimer()
     {
         yield return new WaitForSeconds(2f);

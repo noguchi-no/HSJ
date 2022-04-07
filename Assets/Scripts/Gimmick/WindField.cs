@@ -21,7 +21,7 @@ public class WindField : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.tag == "Player" && col.TryGetComponent(out Rigidbody2D rb))
+        if ((col.CompareTag("Player") || col.CompareTag("Ball"))&& col.TryGetComponent(out Rigidbody2D rb))
         {
             rb.AddForce(force);
         }

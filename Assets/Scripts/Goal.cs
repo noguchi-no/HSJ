@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Systems.Audio;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 using AudioType = Systems.Audio.AudioType;
 
@@ -9,9 +10,13 @@ public class Goal : MonoBehaviour
 {
     SystemAudioManager Se;//SEを鳴らすためのスクリプト
     StageManager StageManager;
+    private GameObject GoalCircle;
+   
     private void Start()
     {
-
+        GoalCircle = GameObject.Find("GoalCircle");
+        GoalCircle.transform.DORotate(new Vector3(0, 0, -360), 2f, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(Ease.Linear);
+        GoalCircle.transform.DOScale(new Vector3(0.35f, 0.35f, 0.35f), 1.2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
         Se = FindObjectOfType<SystemAudioManager>();
         StageManager = FindObjectOfType<StageManager>();
         if (Se == null) Debug.LogError("Sesystemが実装されていません");
