@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
@@ -41,13 +40,21 @@ public class StageManager : MonoBehaviour
     private Stage nowStage;
     private Text TitleText;
     private Text SubTitleText;
+    private GameObject Player;
+    private Player_Physics PlayerCs;
     private GameObject StageClearText;
     [SerializeField]
     private SceneObject nextScene;
     [SerializeField]
     private int nowStageNum;
+    [SerializeField]
+    private GameObject WarpGate;
 
-
+    private void Awake()
+    {
+        StageClearText = GameObject.Find("StageClear");
+        StageClearText.SetActive(false);
+    }
     #region
     static bool stage1 = false;
     static bool stage2 = false;
@@ -79,18 +86,23 @@ public class StageManager : MonoBehaviour
     {
         TitleText = GameObject.Find("TitleText").GetComponent<Text>();
         SubTitleText = GameObject.Find("SubTitleText").GetComponent<Text>();
-        StageClearText = GameObject.Find("StageClear");
-        StageClearText.SetActive(false);
+        PlayerCs = FindObjectOfType<Player_Physics>().GetComponent<Player_Physics>();
+        Player = GameObject.Find("Player");
         switch (nowStage)
         {
             case Stage.stage1:
                 if (stage1) break;
-
-                TitleText.DOFade(1.0f, 1.5f).SetEase(Ease.InOutQuint).SetLoops(2, LoopType.Yoyo);
-                SubTitleText.DOFade(1.0f, 1.5f).SetEase(Ease.InOutQuint).SetLoops(2, LoopType.Yoyo);
+                startAnime();
                 stage1 = true;
                 break;
         }
+    }
+    private void startAnime()
+    {
+        TitleText.DOFade(1.0f, 1.5f).SetEase(Ease.InOutQuint).SetLoops(2, LoopType.Yoyo);
+        SubTitleText.DOFade(1.0f, 1.5f).SetEase(Ease.InOutQuint).SetLoops(2, LoopType.Yoyo);
+        if (PlayerCs != null) PlayerCs.titleCallPowerWait();
+        if (WarpGate != null) StartCoroutine(PlayerWarpStart());
     }
 
     public void stageClear()
@@ -105,7 +117,23 @@ public class StageManager : MonoBehaviour
         PlayerPrefs.Save();
         yield return new WaitForSeconds(3f);
 
-        FadeManager.Instance.LoadScene(nextScene, 0.3f);
+        FadeManager.Instance.LoadScene(nextScene, 0f);
+    }
+
+    IEnumerator PlayerWarpStart()
+    {
+        var color = Player.GetComponent<SpriteRenderer>();
+        color.color = new Color(0, 0, 0, 0);
+        yield return new WaitForSeconds(1f);
+        WarpGate.transform.position = Player.transform.position;
+        WarpGate.transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 1.0f);
+        WarpGate.transform.DORotate(new Vector3(0f, 0f, -360f), 1.0f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(1.0f);
+        color.color = new Color(1, 1, 1, 1);
+        WarpGate.transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1.0f);
+        WarpGate.transform.DORotate(new Vector3(0f, 0f, -360f), 1.0f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(0.9f);
+        WarpGate.SetActive(false);
     }
 
 }
