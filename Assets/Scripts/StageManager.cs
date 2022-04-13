@@ -113,8 +113,11 @@ public class StageManager : MonoBehaviour
 
     IEnumerator SceneChange()
     {
-        PlayerPrefs.SetInt("stageNum", nowStageNum);
-        PlayerPrefs.Save();
+        if(PlayerPrefs.GetInt("stageNum") < nowStageNum)
+        {
+            PlayerPrefs.SetInt("stageNum", nowStageNum);
+            PlayerPrefs.Save();
+        }
         yield return new WaitForSeconds(3f);
 
         FadeManager.Instance.LoadScene(nextScene, 0f);
