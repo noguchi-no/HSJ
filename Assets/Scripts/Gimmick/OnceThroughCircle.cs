@@ -6,9 +6,12 @@ using UnityEngine;
 public class OnceThroughCircle : MonoBehaviour
 {
     private Collider2D CircleCol;
+    public AudioClip Sound;
+    AudioSource audioSource;
     void Start()
     {
         CircleCol = GetComponent<CircleCollider2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerExit2D(Collider2D col)
@@ -16,6 +19,7 @@ public class OnceThroughCircle : MonoBehaviour
         if (col.tag == "Player" && col.TryGetComponent(out Rigidbody2D rb))
         {
             GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 200f);
+            audioSource.PlayOneShot(Sound);
             CircleCol.isTrigger = false;
         }
     }

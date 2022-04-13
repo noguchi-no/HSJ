@@ -57,13 +57,14 @@ public class warpGate : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            audioSource.PlayOneShot(enterSound);
+            
             Debug.Log("warp");
             Sequence seq = DOTween.Sequence();
             seq.Append(col.gameObject.transform.DOScale(Vector2.zero, duration))
             .AppendCallback(() =>
             {
                 col.gameObject.transform.position = WarpPoint.position;
+                audioSource.PlayOneShot(enterSound);
                 col.gameObject.transform.DOScale(playerScale, duration);
             });
             //col.gameObject.transform.position = WarpPoint.position;
