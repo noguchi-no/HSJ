@@ -11,6 +11,7 @@ public class Goal : MonoBehaviour
     SystemAudioManager Se;//SEを鳴らすためのスクリプト
     StageManager StageManager;
     private GameObject GoalCircle;
+    private GameObject PlayerObj;
    
     private void Start()
     {
@@ -25,37 +26,59 @@ public class Goal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.name);
-
         if (other.gameObject.name == "Player")
         {
-            Debug.Log("GOAL!!!");
-            Destroy(this.gameObject); 
-            switch (Se.type)
-            {
-                case SystemAudioManager.SEtype.metal:
-                    PlayBoundSe(AudioType.MGoal);
-                    break;
-                case SystemAudioManager.SEtype.fantasy:
-                    PlayBoundSe(AudioType.FGoal);
-                    break;
-                case SystemAudioManager.SEtype.wood:
-                    PlayBoundSe(AudioType.WGoal);
-                    break;
-                case SystemAudioManager.SEtype.cyber:
-                    PlayBoundSe(AudioType.SGoal);
-                    break;
-                case SystemAudioManager.SEtype.normal:
-                    PlayBoundSe(AudioType.Goal);
-                    break;
-            }
-            StageManager.stageClear();
+            PlayerObj = other.gameObject;
+            PlayerObj.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            PlayerObj.GetComponent<Rigidbody2D>().simulated = false;
+            Debug.Log(PlayerObj);
+            
+            StartCoroutine(Goalanimation());
         }
     }
 
     private void PlayBoundSe(AudioType type)
     {
         if (Se != null) Se.ShotSe(type);
+    }
+
+    private IEnumerator Goalanimation()
+    {
+        Debug.Log("goalAnime");
+        var dis = Vector3.Distance(PlayerObj.transform.position, transform.position);
+        var PlayerPos = (PlayerObj.transform.position - transform.position).normalized;
+        for (int i = 0; i < 90; i++)
+        {
+            //var GoalPlayerPos = PlayerPos - PlayerPos * dis * i * 4 / 360 + transform.position;
+            float temp = (1f * i * 4 / 360);
+            var GoalPlayerPos = new Vector3(PlayerPos.x * dis * (1f - temp) * Mathf.Sin(temp * 15), PlayerPos.x * dis * (1f - temp) * Mathf.Cos(temp * 15), 0) + transform.position;
+            //var GoalPlayerPos = PlayerPos - new Vector3(PlayerPos.x * dis * Mathf.Sin(1f * i * 4/ 360),PlayerPos.y * dis * Mathf.Cos(1f * i * 4 / 360), 0) + transform.position;
+            Debug.Log(Mathf.Sin(i * 4 / 360));
+            PlayerObj.transform.position = GoalPlayerPos;
+            yield return new WaitForFixedUpdate();
+        }
+        var color = PlayerObj.GetComponent<SpriteRenderer>();
+        color.color = new Color(0, 0, 0, 0);
+        Destroy(this.gameObject);
+        StageManager.stageClear();
+        switch (Se.type)
+        {
+            case SystemAudioManager.SEtype.metal:
+                PlayBoundSe(AudioType.MGoal);
+                break;
+            case SystemAudioManager.SEtype.fantasy:
+                PlayBoundSe(AudioType.FGoal);
+                break;
+            case SystemAudioManager.SEtype.wood:
+                PlayBoundSe(AudioType.WGoal);
+                break;
+            case SystemAudioManager.SEtype.cyber:
+                PlayBoundSe(AudioType.SGoal);
+                break;
+            case SystemAudioManager.SEtype.normal:
+                PlayBoundSe(AudioType.Goal);
+                break;
+        }
     }
 
 }
