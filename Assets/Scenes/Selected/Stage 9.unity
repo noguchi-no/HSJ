@@ -553,7 +553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B89: \u98A8"
+  m_Text: "\u30B9\u30C6\u30FC\u30B89: \u6642\u306B\u306F\u8EAB\u3092\u4EFB\u305B\u3088\u3046"
 --- !u!222 &265034436
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2483,7 +2483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2063669627
 BoxCollider2D:
   m_ObjectHideFlags: 0
