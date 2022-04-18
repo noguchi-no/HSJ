@@ -55,7 +55,7 @@ public class warpGate : MonoBehaviour
     bool isReStart;
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Ball"))
         {
             
             Debug.Log("warp");
