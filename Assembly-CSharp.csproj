@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\Audio\ISystemAudioManager.cs" />
      <Compile Include="Assets\Scripts\SceneChange\ToStage.cs" />
      <Compile Include="Assets\Scripts\Gimmick\SecondPlayer.cs" />
+     <Compile Include="Assets\Prefabs\Hints\Hints.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.19f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
