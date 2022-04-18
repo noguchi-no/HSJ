@@ -25,7 +25,7 @@ public class OnceThroughCircle : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Player" && col.gameObject.TryGetComponent(out Rigidbody2D rb))
+        if ((col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Ball")) && col.gameObject.TryGetComponent(out Rigidbody2D rb))
         {
             rb.velocity = new Vector3(2.0f * rb.velocity.x, 2.0f * rb.velocity.y, 0);
         }

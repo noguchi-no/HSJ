@@ -49,10 +49,9 @@ public class Goal : MonoBehaviour
         var PlayerPos = (PlayerObj.transform.position - transform.position).normalized;
         for (int i = 0; i < 90; i++)
         {
-            //var GoalPlayerPos = PlayerPos - PlayerPos * dis * i * 4 / 360 + transform.position;
-            float temp = (1f * i * 4 / 360);
+            float temp = 1f * i * 4 / 360;
+            PlayerObj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f) * (1f - 1f* i / 90);
             var GoalPlayerPos = new Vector3(PlayerPos.x * dis * (1f - temp) * Mathf.Sin(temp * 15), PlayerPos.x * dis * (1f - temp) * Mathf.Cos(temp * 15), 0) + transform.position;
-            //var GoalPlayerPos = PlayerPos - new Vector3(PlayerPos.x * dis * Mathf.Sin(1f * i * 4/ 360),PlayerPos.y * dis * Mathf.Cos(1f * i * 4 / 360), 0) + transform.position;
             Debug.Log(Mathf.Sin(i * 4 / 360));
             PlayerObj.transform.position = GoalPlayerPos;
             yield return new WaitForFixedUpdate();
